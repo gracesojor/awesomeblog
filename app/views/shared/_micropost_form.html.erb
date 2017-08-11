@@ -1,25 +1,15 @@
 <%= form_for(@micropost) do |f| %>
-  
-<!-- Form -->
-  
+  <!-- Form -->
   <%= render 'shared/error_messages', object: f.object %>
-  
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
   </div>
-  
   <%= f.submit "Post", class: "btn btn-primary" %>
-  
-  
-<!-- Picture Upload -->
-  
+  <!-- Picture Upload -->
   <span class="picture">
     <%= f.file_field :picture %>
   </span>
-  
 <% end %>
-
-
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
